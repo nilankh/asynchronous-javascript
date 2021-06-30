@@ -1,11 +1,10 @@
 // asynchronous
 console.log("Before");
+
 getUser(1, (user) => {
-  getUser(1, (user) => {
-    getRepositories(user.gitHubUsername, (repos) => {
-      getCommits(repo, (commits) => {
-        //   CALLBACK HELL
-      });
+  getRepositories(user.gitHubUsername, (repos) => {
+    getCommits(repo, (commits) => {
+      //   CALLBACK HELL
     });
   });
 });
