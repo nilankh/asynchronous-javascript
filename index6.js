@@ -1,13 +1,24 @@
 // Replacing callback with promises
 
 console.log("Before");
-getUser(1, (user) => {
-  getRepositories(user.gitHubUsername, (repos) => {
-    getCommits(repo, (commits) => {
-      //   CALLBACK HELL
-    });
-  });
-});
+// Callback hell
+// getUser(1, (user) => {
+//   getRepositories(user.gitHubUsername, (repos) => {
+//     getCommits(repo, (commits) => {
+//       //   CALLBACK HELL
+//     });
+//   });
+// });
+
+
+// const promise = getUser(1);this line has rewriiten also below
+getUser(1)
+
+  .then((user) => getRepositories(user.gitHubUsername))
+  .then((repos) => getCommits(repos[0]))
+  .then((commits) => console.log("Commits", commits))
+  .catch(err => console.log('Error', err.message));
+
 console.log("After");
 
 function getUser(id) {
