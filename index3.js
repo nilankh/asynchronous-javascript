@@ -17,6 +17,8 @@ const user = getUser(1);
 const repos = getRepositories(user.gitHubUsername);
 const commits = getCommits(repos[0]);
 console.log("After");
+
+
 function getUser(id, callback) {
   setTimeout(() => {
     console.log("Reading a user from database...");
