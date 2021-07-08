@@ -7,7 +7,7 @@
 //       sendEmail(customer.email, movies, () => {
 //         console.log('Email sent...')
 //       });
-//     });
+//     }); 
 //   }
 // });
 
